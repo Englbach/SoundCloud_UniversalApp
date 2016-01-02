@@ -1,0 +1,34 @@
+﻿<UserControl
+    x:Class="EntertaimentGroup.Usercontrol.DownloadUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EntertaimentGroup.Usercontrol"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    >
+
+    <Grid Visibility="{Binding Visibility}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Orientation="Horizontal">
+            <Image Name="Thumb" Source="{Binding Thumb}" Width="50" Height="50" Margin="5" VerticalAlignment="Center"></Image>
+            <TextBlock Name="Title" Text="{Binding Title}" FontSize="13" Foreground="#333333" VerticalAlignment="Center"></TextBlock>
+        </StackPanel>
+        
+        <TextBlock Grid.Column="1" Text="{Binding Status}" FontSize="13" Foreground="#333333" VerticalAlignment="Center"></TextBlock>
+        <StackPanel Grid.Column="2" VerticalAlignment="Center">
+            <ProgressBar  Value="{Binding Percentage}" Background="#F2F2F2" Foreground="#FB2A57"></ProgressBar>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Name="Downloaded" Text="{Binding Downloaded}" FontSize="10" Foreground="#CCCCCC"></TextBlock>
+                <TextBlock Text="MB of" FontSize="10" Foreground="#CCCCCC" Margin="2,0"></TextBlock>
+                <TextBlock Name="Total" Text="{Binding Total}" FontSize="10" Foreground="#CCCCCC"></TextBlock>
+                <TextBlock Text="MB" FontSize="10" Foreground="#CCCCCC" Margin="2,0"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</UserControl>
